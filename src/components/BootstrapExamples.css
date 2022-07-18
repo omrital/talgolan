@@ -1,0 +1,12 @@
+.Container {
+    background-color: white;
+}
+
+.Col {
+    padding: 3px;
+    background-color: #0000;
+}
+
+.Button {
+    width: 100%;
+}
