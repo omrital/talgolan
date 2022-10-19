@@ -4,9 +4,21 @@
 
 .Col {
     padding: 3px;
-    background-color: #0000;
+    background-color: #000;
+}
+
+.Col2 {
+    margin: 0px;
+    background-color: #000;
 }
 
 .Button {
+    margin: 0 -5px 0 -5px;
     width: 100%;
+}
+
+.Category {
+    width: 100%;
+    background: transparent;
+    border: #61dafb;
 }

@@ -20,9 +20,13 @@ type CategoriesSmallData = {
 
 function renderCategories(categories: Category[]) {
   return categories.map((category: Category) => {
+      // const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
     return (
-      <Col className="Col" sm>
-        <Button className="Button" variant="primary">{category.title}</Button>
+      <Col className="Col2" style={{backgroundColor: category.backgroundColor}} sm>
+        {/*<Button className="Button" variant="primary">{category.title}</Button>*/}
+        {/*{<button className="Button">Submit</button>}*/}
+          <div className="Category" onClick={() => window.alert("div click")}>{category.title}</div>
+        {/*  sm=true2*/}
       </Col>
     )
   });
@@ -33,7 +37,7 @@ function CategoriesSmall(data: CategoriesSmallData) {
     return null;
   }
   return (
-    <Row xs={2} sm={3} md={4} lg={5} xl={6}>
+    <Row xs={2}>
       {renderCategories(data.categories)}
     </Row>
   );
@@ -42,15 +46,23 @@ function CategoriesSmall(data: CategoriesSmallData) {
 function BootstrapExamples() {
   return (
     <Container className="Container">
-      {CategoriesSmall({categories: [{title: "a"}, {title: "b"}, {title: "c"}, {title: "d"}, {title: "e"}, {title: "f"}]})}
+      {CategoriesSmall({categories: [{title: "a", backgroundColor: "#EF9A9A"},
+              {title: "b", backgroundColor: "#F06292"},
+              {title: "b", backgroundColor: "#AB47BC"},
+              {title: "b", backgroundColor: "#673AB7"},
+              {title: "b", backgroundColor: "#304FFE"},
+              {title: "b", backgroundColor: "#00ACC1"},
+          ]})}
       {renderReactLogo()}
       <Row xs={2}>
-        <Col className="Col" sm>sm=true</Col>
-        <Col className="Col" sm>sm=true</Col>
-        <Col className="Col" sm>sm=true</Col>
-        <Col className="Col" sm>sm=true</Col>
-        <Col className="Col" sm>sm=true</Col>
-        <Col className="Col" sm>sm=true</Col>
+        <Col className="Col" sm>sm=true1</Col>
+        <Col className="Col" sm>sm=true2</Col>
+        <Col className="Col" sm>sm=true3</Col>
+        <Col className="Col" sm>sm=true4</Col>
+        <Col className="Col" sm>sm=true5</Col>
+        <Col className="Col" sm>sm=true6</Col>
+        <Col className="Col" sm>sm=true7</Col>
+        <Col className="Col" sm>sm=true8</Col>
       </Row>
       {renderReactLogo()}
       <Row>
