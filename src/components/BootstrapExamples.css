@@ -8,7 +8,15 @@
 }
 
 .Col2 {
-    margin: 0px;
+    align-items: center;
+    display: flex;
+    background-color: #000;
+}
+
+.Col3 {
+    height: 15vh;
+    align-items: center;
+    display: flex;
     background-color: #000;
 }
 
