@@ -1,5 +1,7 @@
 import {renderCategoriesSmallExample} from "./CategoriesSmall";
-import Container from 'react-bootstrap/Container';
+// import Container from 'react-bootstrap/Container';
+import Carousel from 'react-bootstrap/Carousel';
+import Image from 'react-bootstrap/Image'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './BootstrapExamples.css';
@@ -7,12 +9,74 @@ import logo from "../logo.svg";
 import React from "react";
 import {renderCategoriesBigExample} from "./CategoriesBig";
 
+function renderGallery() {
+    return (
+        <Row xs={2} sm={3} md={3} lg={4} xl={4} xxl={4}>
+            <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
+            <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
+            <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
+            <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
+            <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
+            <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
+        </Row>
+    );
+}
+
+function renderImageDisplay() {
+    return (
+        <Carousel>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg"
+                    alt="First slide"
+                />
+                <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg"
+                    alt="Second slide"
+                />
+
+                <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg"
+                    alt="Third slide"
+                />
+
+                <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel>
+    );
+}
+
+
 function BootstrapExamples() {
   return (
-    <Container className="Container">
+    <div className="Container">
       {renderCategoriesSmallExample()}
       {renderReactLogo()}
       {renderCategoriesBigExample()}
+      {renderReactLogo()}
+      {renderGallery()}
+      {renderReactLogo()}
+      {renderImageDisplay()}
       {renderReactLogo()}
       <Row xs={2}>
         <Col className="Col" sm>sm=true1</Col>
@@ -149,7 +213,7 @@ function BootstrapExamples() {
          <Col className="Col" >3 of 3</Col>
       </Row>
       {renderReactLogo()}
-    </Container>
+    </div>
   );
 }
 

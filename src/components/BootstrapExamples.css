@@ -30,3 +30,10 @@
     background: transparent;
     border: #61dafb;
 }
+
+.Image {
+    height: 40vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    object-fit: cover;
+}

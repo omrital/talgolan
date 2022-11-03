@@ -28,7 +28,7 @@ function renderCategories(data: CategoriesBigData) {
             <Col className="Col3"
                  style={{backgroundColor: getCategoryBackground(category, selectedId)}}
                  onClick={() => onClick && onClick(category.id)}
-                 sm>
+                 sm={4}>
                 <div className="Category">{category.title}</div>
             </Col>
         )
