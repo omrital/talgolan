@@ -150,3 +150,10 @@
     /*bottom: 0; !* 25% from the top *!*/
     /*position: absolute;*/
 }
+
+.TitleBig {
+    color: grey;
+    font-size: 10vw;
+    padding: 4vw;
+    background-color: black;
+}
