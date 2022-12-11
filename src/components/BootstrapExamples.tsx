@@ -36,6 +36,10 @@ function BootstrapExamples() {
 
       {dddddddddddddddddddddddd()}
 
+      {buttonContinue()}
+
+      {dddddddddddddddddddddddd()}
+
         <Row xs={2}>
         <Col className="Col" sm>sm=true1</Col>
         <Col className="Col" sm>sm=true2</Col>
@@ -222,8 +226,16 @@ function dddddddddddddddddddddddd() {
 
 function titleBig() {
   return (
-    <Col style={{backgroundImage: `url("big-title-background.png")`}} className="TitleBig" sm>Title Big</Col>
+    <Col style={{backgroundImage: `url("big-title-background.png")`}} className="TitleBig" sm>Title big</Col>
   );
+}
+
+function buttonContinue() {
+    return (
+        <Col className="ButtonContinue" sm onClick={() => {
+            window.alert("Button continue click");
+        }} >Button continue</Col>
+    );
 }
 
 function renderImageDisplay(isFullScreen: boolean) {

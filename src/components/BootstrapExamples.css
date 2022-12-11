@@ -157,3 +157,10 @@
     padding: 4vw;
     background-color: black;
 }
+
+.ButtonContinue {
+    color: white;
+    /*font-size: 3vw;*/
+    padding: 1vw;
+    background-color: black;
+}
