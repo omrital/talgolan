@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './BootstrapExamples.css';
 import logo from "../logo.svg";
+import {Form, InputGroup} from "react-bootstrap";
 
 function BootstrapExamples() {
     const [show, setShow] = useState(false);
@@ -33,12 +34,27 @@ function BootstrapExamples() {
       {dddddddddddddddddddddddd()}
 
       {titleBig()}
-
+x
       {dddddddddddddddddddddddd()}
 
       {buttonContinue()}
 
       {dddddddddddddddddddddddd()}
+
+      {buttonContactUs()}
+
+      {dddddddddddddddddddddddd()}
+
+
+
+
+
+
+
+
+
+
+
 
         <Row xs={2}>
         <Col className="Col" sm>sm=true1</Col>
@@ -235,6 +251,17 @@ function buttonContinue() {
         <Col className="ButtonContinue" sm onClick={() => {
             window.alert("Button continue click");
         }} >Button continue</Col>
+    );
+}
+
+function buttonContactUs() {
+    return (
+        <InputGroup>
+            <Form.Control
+                style={{textAlign: "right", direction: "rtl"}}
+                placeholder="שם מלא"
+            />
+        </InputGroup>
     );
 }
 
