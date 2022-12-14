@@ -20,6 +20,28 @@
     background-color: #000;
 }
 
+.Col4 {
+    height: 6vh;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    background-color: gray;
+}
+
+.Col5 {
+    height: 6vh;
+    align-items: center;
+    display: flex;
+    background-color: #000;
+}
+
+.FooterTextView {
+    width: 100%;
+    align-self: center;
+    background: transparent;
+}
+
 .Button {
     margin: 0 -5px 0 -5px;
     width: 100%;

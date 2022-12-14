@@ -41,7 +41,7 @@ x
 
       {dddddddddddddddddddddddd()}
 
-      {buttonContactUs()}
+      {footer()}
 
       {dddddddddddddddddddddddd()}
 
@@ -254,14 +254,28 @@ function buttonContinue() {
     );
 }
 
-function buttonContactUs() {
+function buttonContactUs(placeholder: string) {
     return (
-        <InputGroup>
-            <Form.Control
-                style={{textAlign: "right", direction: "rtl"}}
-                placeholder="שם מלא"
-            />
-        </InputGroup>
+        <Col sm>
+            <InputGroup size={"lg"}>
+                <Form.Control
+                    style={{textAlign: "right", direction: "rtl", alignSelf: "center"}}
+                    placeholder={placeholder}
+                />
+            </InputGroup>
+        </Col>
+    );
+}
+
+function footer() {
+    return (
+        <Row style={{direction: "rtl", alignItems: "center", backgroundColor: "gray", padding: "7px"}} xs={1} sm={1} md={1} lg={5} xl={5} xxl={5}>
+            {<Col className={"Col4"} sm><div className="FooterTextView">לתיאום פגישה</div></Col>}
+            {buttonContactUs("שם מלא")}
+            {buttonContactUs("טלפון")}
+            {buttonContactUs("אימייל")}
+            {<Col className={"Col5"} sm><div className="FooterTextView">שליחה</div></Col>}
+        </Row>
     );
 }
 
