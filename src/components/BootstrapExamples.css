@@ -36,8 +36,27 @@
     background-color: #000;
 }
 
+.Col6 {
+    height: 6vh;
+    align-items: center;
+    /*justify-content: center;*/
+    /*justify-items: center;*/
+    /*align-content: center;*/
+    display: flex;
+    color: white;
+    font-weight: bold;
+    direction: rtl;
+    background-color: lightblue;
+}
+
 .FooterTextView {
     width: 100%;
+    align-self: center;
+    background: transparent;
+}
+
+.BtnInfoTextView {
+    color: black;
     align-self: center;
     background: transparent;
 }

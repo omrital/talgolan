@@ -41,9 +41,20 @@ x
 
       {dddddddddddddddddddddddd()}
 
-      {footer()}
+      {contactUs()}
 
       {dddddddddddddddddddddddd()}
+
+      {buttonInfo()}
+
+      {dddddddddddddddddddddddd()}
+
+
+
+
+
+
+
 
 
 
@@ -267,15 +278,28 @@ function buttonContactUs(placeholder: string) {
     );
 }
 
-function footer() {
+function contactUs() {
     return (
         <Row style={{direction: "rtl", alignItems: "center", backgroundColor: "gray", padding: "7px"}} xs={1} sm={1} md={1} lg={5} xl={5} xxl={5}>
             {<Col className={"Col4"} sm><div className="FooterTextView">לתיאום פגישה</div></Col>}
             {buttonContactUs("שם מלא")}
             {buttonContactUs("טלפון")}
             {buttonContactUs("אימייל")}
-            {<Col className={"Col5"} sm><div className="FooterTextView">שליחה</div></Col>}
+            {<Col className={"Col5"} sm onClick={() => window.alert("send click")}><div className="FooterTextView">שליחה</div></Col>}
         </Row>
+    );
+}
+
+function buttonInfo() {
+    return (
+        <Col className={"Col6"} onClick={() => window.alert("info button click")} sm>
+            <div style={{display: "flex", flexDirection: "row", direction: "rtl", alignItems: "center", alignContent: "center", justifyContent: "center"}}>
+                <object style={{height: "20px",width: "20px", marginLeft: "5px", marginRight: "5px"}} data="logo_facebook.svg" type="image/svg+xml">
+                    <img src="logo192.png" />
+                </object>
+                <div className="BtnInfoTextView">פייסבוק</div>
+            </div>
+        </Col>
     );
 }
 
