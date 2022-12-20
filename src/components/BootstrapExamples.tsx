@@ -1,5 +1,6 @@
 import {renderCategoriesSmallExample} from "./CategoriesSmall";
 import {renderCategoriesBigExample} from "./CategoriesBig";
+import {Form, InputGroup} from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image'
 import React, { useState } from 'react';
@@ -7,7 +8,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './BootstrapExamples.css';
 import logo from "../logo.svg";
-import {Form, InputGroup} from "react-bootstrap";
 
 function BootstrapExamples() {
     const [show, setShow] = useState(false);

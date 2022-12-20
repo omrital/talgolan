@@ -35,33 +35,31 @@ function renderCategories(data: CategoriesSmallData) {
     });
 }
 
-export function renderCategoriesSmallExample() {
-    return (
-        <div>
-            {CategoriesSmall({categories: [
-                    {id: "0", title: "example1", backgroundColor: "#EF9A9A"},
-                    {id: "1", title: "example2", backgroundColor: "#F06292"},
-                    {id: "2", title: "example3", backgroundColor: "#AB47BC"},
-                    {id: "3", title: "example4", backgroundColor: "#673AB7"},
-                    {id: "4", title: "example5", backgroundColor: "#304FFE"},
-                    {id: "5", title: "example6", backgroundColor: "#00ACC1"},
-                ], selectedId: "3",
-                onClick: (id: string) => {
-                    window.alert("id \"" + id + "\" click");
-                }
-            })}
-        </div>
-    );
-}
-
-export function CategoriesSmall(data: CategoriesSmallData) {
-    if (!data || !data.categories) {
+export function CategoriesSmall(props: CategoriesSmallData) {
+    if (!props || !props.categories) {
         return null;
     }
     return (
         <Row xs={2} sm={3} md={3} lg={6} xl={6} xxl={6}>
-            {renderCategories(data)}
+            {renderCategories(props)}
         </Row>
     );
 }
 
+export function renderCategoriesSmallExample() {
+    const categories = [
+        {id: "0", title: "example1", backgroundColor: "#EF9A9A"},
+        {id: "1", title: "example2", backgroundColor: "#F06292"},
+        {id: "2", title: "example3", backgroundColor: "#AB47BC"},
+        {id: "3", title: "example4", backgroundColor: "#673AB7"},
+        {id: "4", title: "example5", backgroundColor: "#304FFE"},
+        {id: "5", title: "example6", backgroundColor: "#00ACC1"},
+    ];
+    return (
+        <CategoriesSmall
+            categories={categories}
+            selectedId={"3"}
+            onClick={(id: string) => {window.alert("id \"" + id + "\" click")}}
+        />
+    );
+}

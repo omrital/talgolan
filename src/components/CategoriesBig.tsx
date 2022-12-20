@@ -21,8 +21,8 @@ function getCategoryBackground(category: Category, selectedId?: string) {
     return category.backgroundColor;
 }
 
-function renderCategories(data: CategoriesBigData) {
-    const {categories, onClick, selectedId} = data;
+function renderCategories(props: CategoriesBigData) {
+    const {categories, onClick, selectedId} = props;
     return categories.map((category: Category) => {
         return (
             <Col className="Col3"
@@ -35,25 +35,6 @@ function renderCategories(data: CategoriesBigData) {
     });
 }
 
-export function renderCategoriesBigExample() {
-    return (
-        <div>
-            {CategoriesBig({categories: [
-                    {id: "0", title: "example1", backgroundColor: "#EF9A9A"},
-                    {id: "1", title: "example2", backgroundColor: "#F06292"},
-                    {id: "2", title: "example3", backgroundColor: "#AB47BC"},
-                    {id: "3", title: "example4", backgroundColor: "#673AB7"},
-                    {id: "4", title: "example5", backgroundColor: "#304FFE"},
-                    {id: "5", title: "example6", backgroundColor: "#00ACC1"},
-                ], selectedId: "3",
-                onClick: (id: string) => {
-                    window.alert("id \"" + id + "\" click");
-                }
-            })}
-        </div>
-    );
-}
-
 export function CategoriesBig(data: CategoriesBigData) {
     if (!data || !data.categories) {
         return null;
@@ -62,5 +43,23 @@ export function CategoriesBig(data: CategoriesBigData) {
         <Row xs={2}>
             {renderCategories(data)}
         </Row>
+    );
+}
+
+export function renderCategoriesBigExample() {
+    const categories = [
+        {id: "0", title: "example1", backgroundColor: "#EF9A9A"},
+        {id: "1", title: "example2", backgroundColor: "#F06292"},
+        {id: "2", title: "example3", backgroundColor: "#AB47BC"},
+        {id: "3", title: "example4", backgroundColor: "#673AB7"},
+        {id: "4", title: "example5", backgroundColor: "#304FFE"},
+        {id: "5", title: "example6", backgroundColor: "#00ACC1"},
+    ];
+    return (
+        <CategoriesBig
+            categories={categories}
+            selectedId={"3"}
+            onClick={(id: string) => {window.alert("id \"" + id + "\" click")}}
+        />
     );
 }
