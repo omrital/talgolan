@@ -265,13 +265,14 @@ function buttonContinue() {
     );
 }
 
-function buttonContactUs(placeholder: string) {
+function inputContactUs(placeholder: string) {
     return (
         <Col sm>
             <InputGroup size={"lg"}>
                 <Form.Control
                     style={{textAlign: "right", direction: "rtl", alignSelf: "center"}}
                     placeholder={placeholder}
+                    onChange={(event) => console.log("omerman", event.target.value)}
                 />
             </InputGroup>
         </Col>
@@ -282,9 +283,9 @@ function contactUs() {
     return (
         <Row style={{direction: "rtl", alignItems: "center", backgroundColor: "gray", padding: "7px"}} xs={1} sm={1} md={1} lg={5} xl={5} xxl={5}>
             {<Col className={"Col4"} sm><div className="FooterTextView">לתיאום פגישה</div></Col>}
-            {buttonContactUs("שם מלא")}
-            {buttonContactUs("טלפון")}
-            {buttonContactUs("אימייל")}
+            {inputContactUs("שם מלא")}
+            {inputContactUs("טלפון")}
+            {inputContactUs("אימייל")}
             {<Col className={"Col5"} sm onClick={() => window.alert("send click")}><div className="FooterTextView">שליחה</div></Col>}
         </Row>
     );
