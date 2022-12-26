@@ -1,7 +1,7 @@
+import {Form, InputGroup} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import React, {ChangeEventHandler, useState} from "react";
-import {Form, InputGroup} from "react-bootstrap";
+import React, {useState} from "react";
 
 type Props = {
     onSendClick: (data: {name: string, phone: string, email: string}) => void;
@@ -33,7 +33,23 @@ export const ContactUs = (props: Props) => {
             {inputContactUs("שם מלא", name, (event) => setName(event.target.value))}
             {inputContactUs("טלפון", phone, (event) => setPhone(event.target.value))}
             {inputContactUs("אימייל", email, (event) => setEmail(event.target.value))}
-            {<Col className={"Col5"} sm onClick={() => onSendClick && onSendClick({name, email, phone})}><div className="FooterTextView">שליחה</div></Col>}
+            {<Col className={"Col5"} sm onClick={() => {
+                setName("");
+                setPhone("");
+                setEmail("");
+                onSendClick && onSendClick({name, email, phone});
+            }}>
+            <div className="FooterTextView">שליחה</div></Col>}
         </Row>
+    );
+}
+
+export function renderContactUsExample() {
+    return (
+        <ContactUs
+            onSendClick={(data: {name: string, phone: string, email: string}) => {
+                window.alert(`Send click with name: ${data.name}, phone: ${data.phone}, email: ${data.email}.`)
+            }}
+        />
     );
 }
