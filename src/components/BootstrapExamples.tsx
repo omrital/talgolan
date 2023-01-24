@@ -1,17 +1,16 @@
 import {renderCategoriesSmallExample} from "./CategoriesSmall";
+import {renderButtonContinueExample} from "./ButtonContinue";
 import {renderCategoriesBigExample} from "./CategoriesBig";
+import {renderImagesGalleryExample} from "./ImagesGallery";
 import {renderButtonInfoExample} from "./ButtonInfo";
 import {renderContactUsExample} from "./ContactUs";
-import {Form, InputGroup} from "react-bootstrap";
+import {renderTitleBigExample} from "./TitleBig";
 import Carousel from 'react-bootstrap/Carousel';
-import Image from 'react-bootstrap/Image'
 import React, { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './BootstrapExamples.css';
 import logo from "../logo.svg";
-import {renderButtonContinueExample} from "./ButtonContinue";
-import {renderTitleBigExample} from "./TitleBig";
 
 function BootstrapExamples() {
     const [show, setShow] = useState(false);
@@ -25,7 +24,7 @@ function BootstrapExamples() {
 
       {dddddddddddddddddddddddd()}
 
-      {Gallery()}
+      {renderImagesGalleryExample()}
 
       {dddddddddddddddddddddddd()}
 
@@ -78,22 +77,6 @@ x
                     </div>
                 </div>
             </div>
-        );
-    }
-
-    function Gallery() {
-        return (
-            <Row xs={2} sm={3} md={3} lg={4} xl={4} xxl={4}>
-                <Image className="Image" onClick={() => {
-                    // window.alert("click");
-                    setShow(true);
-                }} src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
-                <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
-                <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
-                <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
-                <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
-                <Image className="Image" src={'https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg'}></Image>
-            </Row>
         );
     }
 
