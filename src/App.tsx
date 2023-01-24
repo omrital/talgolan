@@ -1,13 +1,12 @@
+import Demo from "./components/Demo";
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import BootstrapExamples from "./components/BootstrapExamples";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BootstrapExamples/>
+        <Demo/>
       </header>
     </div>
   );
