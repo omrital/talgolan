@@ -8,9 +8,17 @@
 }
 
 .Col2 {
-    align-items: center;
     display: flex;
+    align-items: center;
     background-color: #000;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    alignment: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+    text-align-all: center;
 }
 
 .Col3 {
@@ -63,10 +71,38 @@
     width: 100%;
 }
 
-.Category {
+.CategoryContainer {
     width: 100%;
+    height: 100%;
+    background: white;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    alignment: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+    text-align-all: center;
+}
+
+.Category {
+    width: 99%;
+    height: 99%;
     background: transparent;
-    border: #61dafb;
+    /*border: #61dafb;*/
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    alignment: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+    text-align-all: center;
+    /*border-width: 3px;*/
+    /*padding: 1px;*/
+    /*margin-right: 5px;*/
 }
 
 .Image {
@@ -162,4 +198,26 @@
     color: white;
     padding: 1vw;
     background-color: black;
+}
+
+.MainScreen {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.Header {
+    /*height: 6vh;*/
+    align-items: center;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    direction: rtl;
+    /*background-color: lightblue;*/
+}
+
+.HeaderLogo {
+    height: 5vw;
+    width: 5vw;
+    object-fit: cover;
 }

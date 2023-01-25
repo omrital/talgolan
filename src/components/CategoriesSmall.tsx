@@ -29,7 +29,7 @@ function renderCategories(data: CategoriesSmallData) {
                  style={{backgroundColor: getCategoryBackground(category, selectedId)}}
                  onClick={() => onClick && onClick(category.id)}
                  sm>
-                <div className="Category">{category.title}</div>
+                <div className="Category" style={{padding: "5px", textAlign: "center"}}>{category.title}</div>
             </Col>
         )
     });
@@ -40,7 +40,7 @@ export function CategoriesSmall(props: CategoriesSmallData) {
         return null;
     }
     return (
-        <Row xs={2} sm={3} md={3} lg={6} xl={6} xxl={6}>
+        <Row xs={2} sm={3} md={3} lg={3} xl={6} xxl={6}>
             {renderCategories(props)}
         </Row>
     );
