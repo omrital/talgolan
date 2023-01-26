@@ -11,11 +11,13 @@ function renderImagesGallery() {
         {imageSrc: "image_demo_2.jpg", onClick: () => window.alert("image gallery item clicked")},
         {imageSrc: "image_demo_3.jpg", onClick: () => window.alert("image gallery item clicked")},
         {imageSrc: "image_demo_4.jpg", onClick: () => window.alert("image gallery item clicked")},
-        {imageSrc: "image_demo_5.jpg", onClick: () => window.alert("image gallery item clicked")},
-        {imageSrc: "image_demo_6.jpg", onClick: () => window.alert("image gallery item clicked")},
+        // {imageSrc: "image_demo_5.jpg", onClick: () => window.alert("image gallery item clicked")},
+        // {imageSrc: "image_demo_6.jpg", onClick: () => window.alert("image gallery item clicked")},
     ];
     return (
-        <ImagesGallery items={items}/>
+        <div style={{margin: "5px"}}>
+            <ImagesGallery items={items}/>
+        </div>
     );
 }
 
