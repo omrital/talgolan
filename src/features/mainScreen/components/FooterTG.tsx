@@ -68,10 +68,10 @@ export const FooterTG = () => {
     return(
         <Container fluid>
             <Row style={{backgroundColor: "white", direction: "rtl", alignItems: "center", padding: "5px"}} xs={1} sm={1} md={2} lg={3} xl={3} xxl={3}>
-                <Col md={5} lg={5} xl={5} xxl={5}>
+                <Col md={3} lg={3} xl={3} xxl={3}>
                     {renderBusinessInfoRows()}
                 </Col>
-                <Col md={5} lg={5} xl={5} xxl={5}>
+                <Col md={7} lg={7} xl={7} xxl={7}>
                     {renderSocial()}
                 </Col>
                 <Col md={2} lg={2} xl={2} xxl={2}>

@@ -2,7 +2,7 @@ import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import React from "react";
 
-type ImageGalleryItem = {
+export type ImageGalleryItem = {
     imageSrc: string;
     onClick: () => void;
 }
