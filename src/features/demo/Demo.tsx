@@ -1,16 +1,16 @@
-import {renderImagesCarouselModalExample} from "./ImagesCarouselModal";
-import {renderCategoriesSmallExample} from "./CategoriesSmall";
-import {renderImagesCarouselExample} from "./ImagesCarousel";
-import {renderButtonContinueExample} from "./ButtonContinue";
-import {renderCategoriesBigExample} from "./CategoriesBig";
-import {renderImagesGalleryExample} from "./ImagesGallery";
-import {renderButtonInfoExample} from "./ButtonInfo";
-import BootstrapExamples from "./BootstrapExamples";
-import {renderContactUsExample} from "./ContactUs";
-import {renderTitleBigExample} from "./TitleBig";
+import {renderImagesCarouselModalExample} from "../../components/ImagesCarouselModal";
+import {renderCategoriesSmallExample} from "../../components/CategoriesSmall";
+import {renderImagesCarouselExample} from "../../components/ImagesCarousel";
+import {renderButtonContinueExample} from "../../components/ButtonContinue";
+import {renderCategoriesBigExample} from "../../components/CategoriesBig";
+import {renderImagesGalleryExample} from "../../components/ImagesGallery";
+import {renderButtonInfoExample} from "../../components/ButtonInfo";
+import BootstrapExamples from "../../components/BootstrapExamples";
+import {renderContactUsExample} from "../../components/ContactUs";
+import {renderTitleBigExample} from "../../components/TitleBig";
 import React, {useState} from 'react';
-import './BootstrapExamples.css';
-import logo from "../logo.svg";
+import '../../components/BootstrapExamples.css';
+import logo from "../../logo.svg";
 
 function Demo() {
     const [show, setShow] = useState(false);

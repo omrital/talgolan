@@ -54,6 +54,16 @@
     background-color: lightblue;
 }
 
+.Col7 {
+    height: 5vh;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    direction: rtl;
+}
+
 .FooterTextView {
     width: 100%;
     align-self: center;

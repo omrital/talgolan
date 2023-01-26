@@ -1,5 +1,4 @@
-import {MainScreen} from "./features/MainScreen";
-// import Demo from "./components/Demo";
+import MainScreen from "./features/mainScreen";
 import React from 'react';
 import './App.css';
 
