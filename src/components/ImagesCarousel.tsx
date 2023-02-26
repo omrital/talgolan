@@ -5,7 +5,7 @@ export type ImageCarouselItem = {
     title: string;
     imageSrc: string;
     description: string;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 export type ImagesCarouselProps = {
@@ -40,7 +40,7 @@ export const ImagesCarousel = (props: ImagesCarouselProps) => {
         return null;
     }
     return (
-        <Carousel className={isFullScreen ? "Carousel2": "Carousel"}>
+        <Carousel className={isFullScreen ? "Carousel2": "Carousel"} interval={isFullScreen? null : 500}>
             {renderItems(props)}
         </Carousel>
     );

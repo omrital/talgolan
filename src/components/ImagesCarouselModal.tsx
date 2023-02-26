@@ -3,22 +3,28 @@ import React, {useState} from "react";
 
 export type ImagesCarouselModalProps = {
     items: ImageCarouselItem[];
+    onDismiss?: () => void;
 }
 
 export const ImagesCarouselModal = (props: ImagesCarouselModalProps) => {
-    const {items} = props;
+    const {items, onDismiss} = props;
     const [show, setShow] = useState(true);
+
+    const dismiss = () => {
+        setShow(false)
+        onDismiss && onDismiss();
+    };
 
     if (!items || !show) {
         return null;
     }
     return (
-        <div className="ModalBackground" onClick={() => setShow(false)}>
+        <div className="ModalBackground" onClick={() => dismiss()}>
             <div className="Modal" onClick={(event) => {
                 event.stopPropagation()
             }}>
                 <div className={"Modal2"}>
-                    <div onClick={() => setShow(false)} style={{height: "50px", width: "100%", alignItems: "center", display: "flex", justifyContent: "end", paddingTop: "25px", paddingRight: "25px"}}>
+                    <div onClick={() => dismiss()} style={{height: "50px", width: "100%", alignItems: "center", display: "flex", justifyContent: "end", paddingTop: "25px", paddingRight: "25px"}}>
                         <p style={{fontSize: '18sp'}}>
                             <span style={{fontWeight: 'bold'}}>X</span>
                         </p>
