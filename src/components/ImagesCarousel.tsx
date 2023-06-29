@@ -40,7 +40,7 @@ export const ImagesCarousel = (props: ImagesCarouselProps) => {
         return null;
     }
     return (
-        <Carousel className={isFullScreen ? "Carousel2": "Carousel"} interval={isFullScreen? null : 500}>
+        <Carousel className={isFullScreen ? "Carousel2": "Carousel"} interval={isFullScreen? null : 3000}>
             {renderItems(props)}
         </Carousel>
     );
