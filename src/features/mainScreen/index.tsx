@@ -8,20 +8,38 @@ import {ImageCarouselItem, ImagesCarousel} from "../../components/ImagesCarousel
 import {TitleBig} from "../../components/TitleBig";
 import {ImagesCarouselModal} from "../../components/ImagesCarouselModal";
 import {CategoriesSmall} from "../../components/CategoriesSmall";
+import {businessData} from "./businessData";
+import {BusinessItem} from "./types";
+import {dataConverter} from "./services/dataConverter";
 
 function MainScreen() {
     const [show, setShow] = useState(false);
+    const [dialogImages, setDialogImages] = useState<ImageCarouselItem[]>([]);
 
-    const getImageUrlById = (imageId: string) => {
-        return `https://drive.google.com/uc?export=view&id=${imageId}`;
-    };
+    // const getImageUrlGoogleDriveId = (imageId: string) => {
+    //     return `https://drive.google.com/uc?export=view&id=${imageId}`;
+    // };
 
     const renderImagesCarousel = () => {
-        const items: ImageCarouselItem[] = [
-            {title: "Item 1 title", description: "aaaaaa", imageSrc: getImageUrlById('1OwaipJaD0wLm-EwDWNl8gHeOXl0tmU9E'), onClick: () => setShow(true)},
-            {title: "Item 2 title", description: "aaaaaa", imageSrc: "image_demo_2.jpg", onClick: () => setShow(true)},
-            {title: "Item 3 title", description: "aaaaaa", imageSrc: "image_demo_3.jpg", onClick: () => setShow(true)},
-        ];
+        const mainItems = businessData.mainCarouselItems;
+
+        const items = mainItems.map((item: BusinessItem, index: number): ImageCarouselItem => {
+            return {
+                title: item.title || '',
+                description: item.description || '',
+                imageSrc: item.imageUrl,
+                onClick: () => {
+                    setDialogImages(dataConverter.getUiItemsFromIndex(mainItems, index));
+                    setShow(true);
+                },
+            };
+        });
+
+        // const items: ImageCarouselItem[] = [
+        //     {title: "Item 1 title", description: "aaaaaa", imageSrc: 'https://storage.googleapis.com/tilelove-bucket/2022/11/tileisrael3-42352.webp', onClick: () => setShow(true)},
+        //     {title: "Item 2 title", description: "aaaaaa", imageSrc: "image_demo_2.jpg", onClick: () => setShow(true)},
+        //     {title: "Item 3 title", description: "aaaaaa", imageSrc: "image_demo_3.jpg", onClick: () => setShow(true)},
+        // ];
         return (
             <ImagesCarousel items={items} isFullScreen={false}/>
         );
@@ -76,14 +94,14 @@ function MainScreen() {
         );
     }
 
-    const renderImagesCarouselModalExample = () => {
-        const items: ImageCarouselItem[] = [
-            {title: "Item 1", description: "aaa.", imageSrc: "image_demo_4.jpg"},
-            {title: "Item 2", description: "aaa.", imageSrc: "image_demo_5.jpg"},
-            {title: "Item 3", description: "aaa.", imageSrc: "image_demo_6.jpg"},
-        ];
+    const renderImagesCarouselModal = () => {
+        // const items: ImageCarouselItem[] = [
+        //     {title: "Item 1", description: "aaa.", imageSrc: "image_demo_4.jpg"},
+        //     {title: "Item 2", description: "aaa.", imageSrc: "image_demo_5.jpg"},
+        //     {title: "Item 3", description: "aaa.", imageSrc: "image_demo_6.jpg"},
+        // ];
         return (
-            <ImagesCarouselModal items={items} onDismiss={() => setShow(false)}/>
+            <ImagesCarouselModal items={dialogImages} onDismiss={() => setShow(false)}/>
         );
     }
 
@@ -95,7 +113,7 @@ function MainScreen() {
             {renderSubCategories()}
             {renderImagesGallery()}
             {renderContactUs()}
-            {show && renderImagesCarouselModalExample()}
+            {show && renderImagesCarouselModal()}
             <FooterTG/>
         </div>
     );
