@@ -4,7 +4,7 @@ export type BusinessData = {
 }
 
 export type BusinessCategory = {
-    id: string;
+    id: CategoryType;
     title: string;
     items?: BusinessItem[];
     subCategories?: BusinessCategory[];
@@ -15,4 +15,20 @@ export type BusinessItem = {
     title?: string;
     imageUrl: string;
     description?: string;
+}
+
+export enum CategoryType {
+    CERAMIC = "CERAMIC",
+    TOILET = "TOILET",
+    BATH = "BATH",
+    WASH = "WASH",
+    TAP = "TAP",
+    CABINET = "CABINET",
+    // Ceramic types
+    CLASSIC = "CLASSIC",
+    MODERN = "MODERN",
+    INDUSTRIAL = "INDUSTRIAL",
+    RURAL = "RURAL",
+    STONE = "STONE",
+    PARQUET = "PARQUET"
 }

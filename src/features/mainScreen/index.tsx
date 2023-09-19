@@ -9,12 +9,14 @@ import {TitleBig} from "../../components/TitleBig";
 import {ImagesCarouselModal} from "../../components/ImagesCarouselModal";
 import {CategoriesSmall} from "../../components/CategoriesSmall";
 import {businessData} from "./businessData";
-import {BusinessItem} from "./types";
+import {BusinessItem, CategoryType} from "./types";
 import {dataConverter} from "./services/dataConverter";
 
 function MainScreen() {
     const [show, setShow] = useState(false);
     const [dialogImages, setDialogImages] = useState<ImageCarouselItem[]>([]);
+    const [mainCategory, setMainCategory] = useState(CategoryType.CERAMIC);
+    const [subCategory, setSubCategory] = useState(CategoryType.CLASSIC);
 
     // const getImageUrlGoogleDriveId = (imageId: string) => {
     //     return `https://drive.google.com/uc?export=view&id=${imageId}`;
@@ -29,7 +31,7 @@ function MainScreen() {
                 description: item.description || '',
                 imageSrc: item.imageUrl,
                 onClick: () => {
-                    setDialogImages(dataConverter.getUiItemsFromIndex(mainItems, index));
+                    setDialogImages(dataConverter.getCarouselItemsFromIndex(mainItems, index));
                     setShow(true);
                 },
             };
@@ -40,31 +42,45 @@ function MainScreen() {
         //     {title: "Item 2 title", description: "aaaaaa", imageSrc: "image_demo_2.jpg", onClick: () => setShow(true)},
         //     {title: "Item 3 title", description: "aaaaaa", imageSrc: "image_demo_3.jpg", onClick: () => setShow(true)},
         // ];
+
         return (
             <ImagesCarousel items={items} isFullScreen={false}/>
         );
     }
 
     const renderTitleBig = () => {
+        const categories = businessData.categories;
+        const currentCategory = categories.find(category => category.id === mainCategory);
+
         return <TitleBig
-            title={"אולם תצוגה"}
+            title={currentCategory?.title ?? ""}
             backgroundImage={"big-title-background.png"}
         ></TitleBig>
     }
 
     function renderSubCategories() {
-        const subCategories = [
+        if (!subCategory) {
+            return <></>;
+        }
+
+        const categories = businessData.categories;
+        const currentCategory = categories.find(category => category.id === mainCategory);
+        const subCategories = currentCategory?.subCategories;
+        // const subCategoriesUiData = dataConverter.fromBusinessCategoriesToUiCategoriesItems(subCategories);
+
+        const subCategoriesUiData = [
             {id: "0", title: "מודרני", backgroundColor: "#EF9A9A"},
             {id: "1", title: "קלאסי", backgroundColor: "#F06292"},
-            {id: "2", title: "כפרי", backgroundColor: "#AB47BC"},
-            {id: "3", title: "תעשייתי", backgroundColor: "#673AB7"},
-            {id: "4", title: "דמוי פרקט", backgroundColor: "#304FFE"},
-            {id: "5", title: "חיפוי אבן", backgroundColor: "#00ACC1"},
+            {id: "3", title: "כפרי", backgroundColor: "#AB47BC"},
+            {id: "4", title: "תעשייתי", backgroundColor: "#673AB7"},
+            {id: "5", title: "דמוי פרקט", backgroundColor: "#304FFE"},
+            {id: "6", title: "חיפוי אבן", backgroundColor: "#00ACC1"},
         ];
+
         return (
             <CategoriesSmall
-                categories={subCategories}
-                selectedId={"3"}
+                categories={subCategoriesUiData}
+                selectedId={subCategory}
                 onClick={(id: string) => {window.alert("id \"" + id + "\" click")}}
             />
         );

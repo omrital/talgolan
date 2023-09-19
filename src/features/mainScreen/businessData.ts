@@ -1,4 +1,4 @@
-import {BusinessCategory, BusinessData, BusinessItem} from "./types";
+import {BusinessCategory, BusinessData, BusinessItem, CategoryType} from "./types";
 
 const mainCarouselItems: BusinessItem[] = [
     {
@@ -23,7 +23,7 @@ const mainCarouselItems: BusinessItem[] = [
 
 const ceramicCategories: BusinessCategory[] = [
     {
-        id: 'A1A1',
+        id: CategoryType.CERAMIC,
         title: "קלאסי",
         items: [
             {
@@ -53,7 +53,7 @@ const ceramicCategories: BusinessCategory[] = [
         ],
     },
     {
-        id: 'A1A2',
+        id: CategoryType.MODERN,
         title: "מודרני",
         items: [
             {
@@ -83,7 +83,7 @@ const ceramicCategories: BusinessCategory[] = [
         ]
     },
     {
-        id: 'A1A3',
+        id: CategoryType.RURAL,
         title: "כפרי",
         items: [
             {
@@ -113,7 +113,7 @@ const ceramicCategories: BusinessCategory[] = [
         ]
     },
     {
-        id: 'A1A4',
+        id: CategoryType.INDUSTRIAL,
         title: "תעשייתי",
         items: [
             {
@@ -143,7 +143,7 @@ const ceramicCategories: BusinessCategory[] = [
         ]
     },
     {
-        id: 'A1A5',
+        id: CategoryType.PARQUET,
         title: "פרקט",
         items: [
             {
@@ -173,7 +173,7 @@ const ceramicCategories: BusinessCategory[] = [
         ]
     },
     {
-        id: 'A1A6',
+        id: CategoryType.STONE,
         title: "אבן",
         items: [
             {
@@ -208,12 +208,12 @@ export const businessData: BusinessData = {
     mainCarouselItems: mainCarouselItems,
     categories: [
         {
-            id: 'A1',
+            id: CategoryType.CERAMIC,
             title: "קרמיקה",
             subCategories: ceramicCategories,
         },
         {
-            id: 'A2',
+            id: CategoryType.TOILET,
             title: "אסלות",
             items: [
                 {
@@ -243,8 +243,8 @@ export const businessData: BusinessData = {
             ]
         },
         {
-            id: 'A3',
-            title: "אמבטיה",
+            id: CategoryType.BATH,
+            title: "אמבטיות",
             items: [
                 {
                     id: 'A31',
@@ -273,7 +273,7 @@ export const businessData: BusinessData = {
             ]
         },
         {
-            id: 'A4',
+            id: CategoryType.TAP,
             title: "כיורים",
             items: [
                 {
@@ -303,7 +303,7 @@ export const businessData: BusinessData = {
             ]
         },
         {
-            id: 'A5',
+            id: CategoryType.WASH,
             title: "ברזים",
             items: [
                 {
@@ -333,7 +333,7 @@ export const businessData: BusinessData = {
             ]
         },
         {
-            id: 'A6',
+            id: CategoryType.CABINET,
             title: "ארונות",
             items: [
                 {

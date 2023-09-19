@@ -100,7 +100,6 @@
     width: 99%;
     height: 99%;
     background: transparent;
-    /*border: #61dafb;*/
     align-self: center;
     align-content: center;
     justify-content: center;
@@ -110,9 +109,23 @@
     justify-self: center;
     text-align: center;
     text-align-all: center;
-    /*border-width: 3px;*/
-    /*padding: 1px;*/
-    /*margin-right: 5px;*/
+    color: black;
+}
+
+.CategorySelected {
+    width: 99%;
+    height: 99%;
+    background: transparent;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    alignment: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+    text-align-all: center;
+    color: white;
 }
 
 .Image {

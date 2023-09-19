@@ -1,8 +1,9 @@
-import {BusinessItem} from "../types";
+import {BusinessCategory, BusinessItem} from "../types";
 import {ImageCarouselItem} from "../../../components/ImagesCarousel";
+import {Category} from "../../../components/types";
 
-const getUiItemsFromIndex = (items: BusinessItem[], index: number): ImageCarouselItem[] => {
-    const uiItems = fromBusinessItemsToUiItems(items);
+const getCarouselItemsFromIndex = (items: BusinessItem[], index: number): ImageCarouselItem[] => {
+    const uiItems = fromBusinessItemsToCarouselItems(items);
 
     if (index === 0) {
         return uiItems;
@@ -12,8 +13,11 @@ const getUiItemsFromIndex = (items: BusinessItem[], index: number): ImageCarouse
     return [...itemsFromIndexToEnd, ...itemsFromStartToIndex];
 };
 
-const fromBusinessItemsToUiItems = (items: BusinessItem[]): ImageCarouselItem[] => {
-    return items.map((item: BusinessItem, index: number): ImageCarouselItem => {
+const fromBusinessItemsToCarouselItems = (items?: BusinessItem[]): ImageCarouselItem[] => {
+    if (!items) {
+        return [];
+    }
+    return items.map((item: BusinessItem): ImageCarouselItem => {
         return {
             title: item.title || '',
             description: item.description || '',
@@ -22,7 +26,20 @@ const fromBusinessItemsToUiItems = (items: BusinessItem[]): ImageCarouselItem[] 
     });
 }
 
+const fromBusinessCategoriesToUiCategoriesItems = (items?: BusinessCategory[]): Category[] => {
+    if (!items) {
+        return [];
+    }
+    return items.map((item: BusinessCategory): Category => {
+        return {
+            id: item.id,
+            title: item.title || '',
+        };
+    });
+}
+
 export const dataConverter = {
-    fromBusinessItemsToUiItems,
-    getUiItemsFromIndex,
+    fromBusinessCategoriesToUiCategoriesItems,
+    fromBusinessItemsToCarouselItems,
+    getCarouselItemsFromIndex,
 }

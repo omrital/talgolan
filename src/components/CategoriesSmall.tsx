@@ -1,12 +1,7 @@
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import React from "react";
-
-export type Category = {
-    id: string;
-    title: string;
-    backgroundColor?: string;
-}
+import {Category} from "./types";
 
 export type CategoriesSmallData = {
     categories: Category[];
@@ -18,18 +13,28 @@ function getCategoryBackground(category: Category, selectedId?: string) {
     if (category.id === selectedId) {
         return "#000";
     }
-    return category.backgroundColor;
+    return "#FFF";
+    // return "#F00";
+}
+
+function getCategoryClass(category: Category, selectedId?: string) {
+    if (category.id === selectedId) {
+        return "CategorySelected";
+    }
+    return "Category";
 }
 
 function renderCategories(data: CategoriesSmallData) {
     const {categories, onClick, selectedId} = data;
+
     return categories.map((category: Category) => {
         return (
             <Col className="Col2"
                  style={{backgroundColor: getCategoryBackground(category, selectedId)}}
                  onClick={() => onClick && onClick(category.id)}
                  sm>
-                <div className="Category" style={{padding: "5px", textAlign: "center"}}>{category.title}</div>
+                <div className={getCategoryClass(category, selectedId)} style={{padding: "5px", textAlign: "center"}}>{category.title}</div>
+                {/*<div className="Category" style={{padding: "5px", textAlign: "center"}}>{category.title}</div>*/}
             </Col>
         )
     });
@@ -58,7 +63,7 @@ export function renderCategoriesSmallExample() {
     return (
         <CategoriesSmall
             categories={categories}
-            selectedId={"3"}
+            selectedId={"0"}
             onClick={(id: string) => {window.alert("id \"" + id + "\" click")}}
         />
     );

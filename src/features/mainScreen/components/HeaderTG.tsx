@@ -5,13 +5,13 @@ import Row from "react-bootstrap/Row";
 import React from "react";
 
 function renderMainCategories() {
-    const categories = [
-        {id: "0", title: "אולם תצוגה", backgroundColor: "#EF9A9A"},
-        {id: "1", title: "פרוייקטים", backgroundColor: "#F06292"},
-        {id: "2", title: "ברזל", backgroundColor: "#AB47BC"},
-        {id: "3", title: "אינסטלציה", backgroundColor: "#673AB7"},
-        {id: "4", title: "חומרי בניין", backgroundColor: "#304FFE"},
-        {id: "5", title: "כלי עבודה", backgroundColor: "#00ACC1"},
+    const categories: any[] = [
+        // {id: "0", title: "קרמיקה", backgroundColor: "#EF9A9A"},
+        // {id: "1", title: "אסלות", backgroundColor: "#F06292"},
+        // {id: "2", title: "אמבטיות", backgroundColor: "#AB47BC"},
+        // {id: "3", title: "כיורים", backgroundColor: "#673AB7"},
+        // {id: "4", title: "ברזים", backgroundColor: "#304FFE"},
+        // {id: "5", title: "ארונות", backgroundColor: "#00ACC1"},
     ];
     return (
         <CategoriesSmall

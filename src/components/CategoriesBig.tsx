@@ -1,12 +1,7 @@
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import React from "react";
-
-export type Category = {
-    id: string;
-    title: string;
-    backgroundColor?: string;
-}
+import {Category} from "./types";
 
 export type CategoriesBigData = {
     categories: Category[];
@@ -18,7 +13,7 @@ function getCategoryBackground(category: Category, selectedId?: string) {
     if (category.id === selectedId) {
         return "#000";
     }
-    return category.backgroundColor;
+    return "FFF";
 }
 
 function renderCategories(props: CategoriesBigData) {
