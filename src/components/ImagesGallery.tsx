@@ -1,18 +1,14 @@
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import React from "react";
-
-export type ImageGalleryItem = {
-    imageSrc: string;
-    onClick: () => void;
-}
+import {ImageCarouselItem} from "./ImagesCarousel";
 
 type Props = {
-    items: ImageGalleryItem[];
+    items: ImageCarouselItem[];
 }
 
-function renderItems(items: ImageGalleryItem[]) {
-    return items.map((imageItem: ImageGalleryItem) => {
+function renderItems(items: ImageCarouselItem[]) {
+    return items.map((imageItem: ImageCarouselItem) => {
         const {imageSrc, onClick} = imageItem;
         return (
             <Image className="Image" onClick={onClick} src={imageSrc}></Image>
@@ -33,7 +29,7 @@ export const ImagesGallery = (props: Props) => {
 }
 
 export function renderImagesGalleryExample(onClickFirstItem?: () => void) {
-    const items: ImageGalleryItem[] = [
+    const items: ImageCarouselItem[] = [
         {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => onClickFirstItem && onClickFirstItem()},
         {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image gallery item clicked")},
         {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image gallery item clicked")},

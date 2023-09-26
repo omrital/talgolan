@@ -2,9 +2,9 @@ import Carousel from "react-bootstrap/Carousel";
 import React from "react";
 
 export type ImageCarouselItem = {
-    title: string;
+    title?: string;
     imageSrc: string;
-    description: string;
+    description?: string;
     onClick?: () => void;
 }
 

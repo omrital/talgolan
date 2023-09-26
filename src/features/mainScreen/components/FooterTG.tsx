@@ -1,8 +1,8 @@
+import {ButtonInfo} from "../../../components/ButtonInfo";
 import Container from 'react-bootstrap/Container';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import React from "react";
-import {ButtonInfo, renderButtonInfoExample} from "../../../components/ButtonInfo";
 
 function renderPhoneRow() {
     return (

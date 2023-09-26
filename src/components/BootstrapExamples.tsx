@@ -64,7 +64,6 @@ function BootstrapExamples() {
                 <Col className="Col" sm={4}>sm=4</Col>
             </Row>
             {divider()}
-            {/* Stack the columns on mobile by making one full-width and the other half-width */}
             <Row>
                 <Col className="Col" xs={12} md={8}>
                     xs=12 md=8
@@ -74,7 +73,6 @@ function BootstrapExamples() {
                 </Col>
             </Row>
             {divider()}
-            {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
             <Row>
                 <Col className="Col" xs={6} md={4}>
                     xs=6 md=4
@@ -87,7 +85,6 @@ function BootstrapExamples() {
                 </Col>
             </Row>
             {divider()}
-            {/* Columns are always 50% wide, on mobile and desktop */}
             <Row>
                 <Col className="Col" xs={6}>xs=6</Col>
                 <Col className="Col" xs={6}>xs=6</Col>

@@ -1,5 +1,5 @@
-import {BusinessCategory, BusinessItem} from "../types";
 import {ImageCarouselItem} from "../../../components/ImagesCarousel";
+import {BusinessCategory, BusinessItem} from "../types";
 import {Category} from "../../../components/types";
 
 const getCarouselItemsFromIndex = (items: BusinessItem[], index: number): ImageCarouselItem[] => {

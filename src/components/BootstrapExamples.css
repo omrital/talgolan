@@ -213,9 +213,8 @@
 
 .TitleBig {
     color: #555;
-    font-size: 6vw;
-    max-height: 200px;
-    padding: 20px;
+    font-weight: normal;
+    padding: 1vw;
     background-color: black;
 }
 
@@ -232,7 +231,6 @@
 }
 
 .Header {
-    /*height: 6vh;*/
     align-items: center;
     display: flex;
     color: white;

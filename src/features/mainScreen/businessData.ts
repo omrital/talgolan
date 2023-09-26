@@ -3,27 +3,27 @@ import {BusinessCategory, BusinessData, BusinessItem, CategoryType} from "./type
 const mainCarouselItems: BusinessItem[] = [
     {
         id: 'MAIN1',
-        title: "אאא",
-        description: "אאא",
-        imageUrl: "https://storage.googleapis.com/tilelove-bucket/2022/11/tileisrael3-42352.webp"
+        title: "",
+        description: "",
+        imageUrl: "https://antonovich-design.com/uploads/page/2017/8/20175rqKQqDNsGFS.jpg"
     },
     {
         id: 'MAIN2',
-        title: "אאא",
-        description: "אאא",
+        title: "",
+        description: "",
         imageUrl: "https://www.kajariaceramics.com/test_folder/mobileapp/uploads/blogs/1552651926_WHY-CERAMIC-TILES-ARE-A-GREAT-OPTION-FOR-YOUR-FLOORS-AND-WALLS.JPG"
     },
     {
         id: 'MAIN3',
-        title: "אאא",
-        description: "אאא",
-        imageUrl: "https://aradbranding.com/en//wp-content/uploads/2022/08/thgrfew1.jpg"
+        title: "",
+        description: "",
+        imageUrl: "https://images.squarespace-cdn.com/content/v1/56f2595e8a65e2db95a7d983/8b69aa99-7c48-44b4-8b9e-c9442cff0941/_MG_2461%2B+%281%29+%281%29.jpg"
     },
 ];
 
 const ceramicCategories: BusinessCategory[] = [
     {
-        id: CategoryType.CERAMIC,
+        id: CategoryType.CLASSIC,
         title: "קלאסי",
         items: [
             {
@@ -40,7 +40,7 @@ const ceramicCategories: BusinessCategory[] = [
             },
             {
                 id: 'A1A14',
-                imageUrl: "https://www.aventetile.com/cdn/shop/articles/1393_1024x1024.jpg"
+                imageUrl: "https://maughons.com/cdn/shop/products/exquisite-design-marble-like-pvc-vinyl-floor-mural-self-adhesive-custom-sizes-available-household-wallpaper-floor-maughons-865343_1024x1024.jpg?v=1619294876"
             },
             {
                 id: 'A1A15',
@@ -48,7 +48,7 @@ const ceramicCategories: BusinessCategory[] = [
             },
             {
                 id: 'A1A16',
-                imageUrl: "https://capietra.com/wp-content/uploads/2021/03/NT_WoodlandGlade_600x700_20.jpg"
+                imageUrl: "https://media.casa39.com/media/catalog/category/travertino_it.jpg"
             },
         ],
     },
@@ -62,7 +62,7 @@ const ceramicCategories: BusinessCategory[] = [
             },
             {
                 id: 'A1A22',
-                imageUrl: "https://cdn.trendir.com/wp-content/uploads/old/archives/senso-flooring-impressions.jpg"
+                imageUrl: "https://image.made-in-china.com/2f0j00lzjUVyLslJki/Mexican-Saltillo-Mesa-Flooring-Marble-Calgary-Modern-White-Floor-Tile.jpg"
             },
             {
                 id: 'A1A23',
@@ -152,11 +152,11 @@ const ceramicCategories: BusinessCategory[] = [
             },
             {
                 id: 'A1A52',
-                imageUrl: "https://previews.123rf.com/images/lounom/lounom2004/lounom200400001/144113722-grey-white-wood-floor-texture-background-viewed-from-above-neutral-whitewashed-hardwood-stain-gives.jpg"
+                imageUrl: "https://www.hrjohnsonindia.com/assets/images/blog/walnut-lumber.jpg"
             },
             {
                 id: 'A1A53',
-                imageUrl: "https://previews.123rf.com/images/everyonensk/everyonensk1904/everyonensk190400582/120927903-modern-vinyl-floor-with-old-wood-imitation-close-up-of-new-gray-flooring-with-texture-from-tiles.jpg"
+                imageUrl: "https://www.bostondesignguide.com/sites/default/files/design-wood-floors.jpg"
             },
             {
                 id: 'A1A54',
@@ -182,19 +182,19 @@ const ceramicCategories: BusinessCategory[] = [
             },
             {
                 id: 'A1A62',
-                imageUrl: "https://www.shutterstock.com/shutterstock/photos/2257344563/display_1500/stock-photo-full-frame-detail-showing-lots-of-broken-floor-tiles-seen-from-above-2257344563.jpg"
+                imageUrl: "https://image.made-in-china.com/202f0j00pTgURtGsjcqP/2018-New-Granite-Flooring-Tile-Design-Outdoor-Decor-Stone-Tile-China-Decking-Floor.jpg"
             },
             {
                 id: 'A1A63',
-                imageUrl: "https://c8.alamy.com/comp/2M6F3AF/marble-floor-stone-floor-texture-tile-and-marble-2M6F3AF.jpg"
+                imageUrl: "https://r2backdrops.com/cdn/shop/products/1982-STONE_FLOOR_-_60x60_Web.jpg"
             },
             {
                 id: 'A1A64',
-                imageUrl: "https://www.shutterstock.com/shutterstock/photos/703053916/display_1500/stock-photo-beautiful-stone-pattern-in-walk-way-from-garden-with-retro-filter-703053916.jpg"
+                imageUrl: "https://server.orientbell.com/media/catalog/product/o/d/odm_cobble_stone_ceramic_tiles_floor_395x395mm.jpg"
             },
             {
                 id: 'A1A65',
-                imageUrl: "https://c8.alamy.com/comp/H2G1C3/stonework-texture-abstract-background-of-stone-wall-or-flooring-made-H2G1C3.jpg"
+                imageUrl: "https://5.imimg.com/data5/VE/MY/MY-48877/stone-102_12x12-500x500.jpg"
             },
             {
                 id: 'A1A66',

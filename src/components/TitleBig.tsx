@@ -7,12 +7,17 @@ type Props = {
 }
 
 export const TitleBig = (props: Props) => {
-    const {title, backgroundImage} = props;
+    const {title} = props;
     return (
-        <Col
-            style={{backgroundImage: `url("${backgroundImage}")`,}}
-            className="TitleBig"
-            sm>{title}</Col>
+        <div>
+            <div style={{background: "#CCC", height: "1px", width: "100%"}}></div>
+            <Col
+                style={{background: "#EEEEFF"}}
+                className="TitleBig"
+                sm>{title}
+            </Col>
+            <div style={{background: "#CCC", height: "1px", width: "100%"}}></div>
+        </div>
     );
 }
 

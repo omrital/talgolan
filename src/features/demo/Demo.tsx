@@ -8,8 +8,8 @@ import {renderButtonInfoExample} from "../../components/ButtonInfo";
 import BootstrapExamples from "../../components/BootstrapExamples";
 import {renderContactUsExample} from "../../components/ContactUs";
 import {renderTitleBigExample} from "../../components/TitleBig";
-import React, {useState} from 'react';
 import '../../components/BootstrapExamples.css';
+import React, {useState} from 'react';
 import logo from "../../logo.svg";
 
 function Demo() {
