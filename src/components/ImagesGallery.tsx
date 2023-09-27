@@ -27,17 +27,3 @@ export const ImagesGallery = (props: Props) => {
         </Row>
     );
 }
-
-export function renderImagesGalleryExample(onClickFirstItem?: () => void) {
-    const items: ImageDataItem[] = [
-        {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => onClickFirstItem && onClickFirstItem()},
-        {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image gallery item clicked")},
-        {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image gallery item clicked")},
-        {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image gallery item clicked")},
-        {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image gallery item clicked")},
-        {imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image gallery item clicked")},
-    ];
-    return (
-        <ImagesGallery items={items}/>
-    );
-}

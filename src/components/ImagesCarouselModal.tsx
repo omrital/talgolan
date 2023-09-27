@@ -36,14 +36,3 @@ export const ImagesCarouselModal = (props: ImagesCarouselModalProps) => {
         </div>
     );
 }
-
-export function renderImagesCarouselModalExample() {
-    const items: ImageDataItem[] = [
-        {title: "Item 1 title", description: "Nulla vitae elit libero, a pharetra augue mollis interdum.", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image carousel item clicked")},
-        {title: "Item 2 title", description: "Nulla vitae elit libero, a pharetra augue mollis interdum.", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image carousel item clicked")},
-        {title: "Item 3 title", description: "Nulla vitae elit libero, a pharetra augue mollis interdum.", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image carousel item clicked")},
-    ];
-    return (
-        <ImagesCarouselModal items={items}/>
-    );
-}

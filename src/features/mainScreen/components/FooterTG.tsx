@@ -10,9 +10,6 @@ function renderPhoneRow() {
             title={"04-673-4646"}
             icon={"icon_phone.svg"}
             className={"Col7"}
-            onClick={() => {
-                window.alert(`phone click`)
-            }}
         />
     );
 }
@@ -23,9 +20,6 @@ function renderAddressRow() {
             title={"פארק תעשיות קדמת גליל"}
             icon={"icon_waze.svg"}
             className={"Col7"}
-            onClick={() => {
-                window.alert(`address click`)
-            }}
         />
     );
 }
@@ -36,9 +30,6 @@ function renderEmailRow() {
             title={"talgolan@gmail.com"}
             icon={"icon_email.svg"}
             className={"Col7"}
-            onClick={() => {
-                window.alert(`email click`)
-            }}
         />
     );
 }

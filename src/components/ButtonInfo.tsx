@@ -5,7 +5,7 @@ type Props = {
     title: string;
     icon: string;
     fallbackIcon?: string;
-    onClick: () => void;
+    onClick?: () => void;
     className?: string;
 }
 
@@ -20,18 +20,5 @@ export const ButtonInfo = (props: Props) => {
                 <div className="BtnInfoTextView">{title}</div>
             </div>
         </Col>
-    );
-}
-
-export function renderButtonInfoExample() {
-    return (
-        <ButtonInfo
-            title={"פייסבוק"}
-            icon={"icon_facebook.svg"}
-            fallbackIcon={"logo192.png"}
-            onClick={() => {
-                window.alert(`facebook button click`)
-            }}
-        />
     );
 }

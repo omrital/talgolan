@@ -20,11 +20,3 @@ export const TitleBig = (props: Props) => {
         </div>
     );
 }
-
-export function renderTitleBigExample() {
-    return <TitleBig
-        title={"כלים סניטריים"}
-        backgroundImage={"big-title-background.png"}
-    ></TitleBig>
-}
-
