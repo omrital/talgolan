@@ -13,7 +13,7 @@ function getCategoryBackground(category: Category, selectedId?: string) {
     if (category.id === selectedId) {
         return "#000";
     }
-    return "FFF";
+    return "#FFF";
 }
 
 function renderCategories(props: CategoriesBigData) {

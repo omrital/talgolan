@@ -129,7 +129,7 @@
 }
 
 .Image {
-    height: 40vw;
+    height: 35vw;
     padding-top: 10px;
     padding-bottom: 10px;
     object-fit: cover;
@@ -144,7 +144,7 @@
 }
 
 .CarouselImage {
-    height: 50vw;
+    height: 40vw;
     object-fit: fill;
     align-self: center;
     align-content: center;

@@ -1,4 +1,4 @@
-import {BusinessCategory, BusinessData, BusinessItem, CategoryType} from "./types";
+import {BusinessCategory, BusinessData, BusinessItem, CategoryType} from "../types";
 
 const mainCarouselItems: BusinessItem[] = [
     {

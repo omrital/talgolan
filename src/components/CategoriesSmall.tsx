@@ -62,7 +62,6 @@ export function renderCategoriesSmallExample() {
         <CategoriesSmall
             categories={categories}
             selectedId={"0"}
-            // setSelectedId={() => {}}
             onClick={(id: string) => {window.alert("id \"" + id + "\" click")}}
         />
     );

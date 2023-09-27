@@ -1,21 +1,15 @@
 import Carousel from "react-bootstrap/Carousel";
+import {ImageDataItem} from "./types";
 import React from "react";
-
-export type ImageCarouselItem = {
-    title?: string;
-    imageSrc: string;
-    description?: string;
-    onClick?: () => void;
-}
 
 export type ImagesCarouselProps = {
     isFullScreen: boolean;
-    items: ImageCarouselItem[];
+    items: ImageDataItem[];
 }
 
 function renderItems(props: ImagesCarouselProps) {
     const {items, isFullScreen} = props;
-    return items.map((imageData: ImageCarouselItem) => {
+    return items.map((imageData: ImageDataItem) => {
         const {title, description, imageSrc, onClick} = imageData;
         return (
             <Carousel.Item className={isFullScreen ? "CarouselImage2" : undefined}>
@@ -47,7 +41,7 @@ export const ImagesCarousel = (props: ImagesCarouselProps) => {
 }
 
 export function renderImagesCarouselExample() {
-    const items: ImageCarouselItem[] = [
+    const items: ImageDataItem[] = [
         {title: "Item 1 title", description: "Nulla vitae elit libero, a pharetra augue mollis interdum.", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image carousel item clicked")},
         {title: "Item 2 title", description: "Nulla vitae elit libero, a pharetra augue mollis interdum.", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image carousel item clicked")},
         {title: "Item 3 title", description: "Nulla vitae elit libero, a pharetra augue mollis interdum.", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/52/Rabbi_Yosef_Haim.jpg", onClick: () => window.alert("image carousel item clicked")},

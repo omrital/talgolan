@@ -1,8 +1,7 @@
-import {ImageCarouselItem} from "../../../components/ImagesCarousel";
+import {Category, ImageDataItem} from "../../../components/types";
 import {BusinessCategory, BusinessItem} from "../types";
-import {Category} from "../../../components/types";
 
-const getCarouselItemsFromIndex = (items: BusinessItem[], index: number): ImageCarouselItem[] => {
+const getCarouselItemsFromIndex = (items: BusinessItem[], index: number): ImageDataItem[] => {
     const uiItems = fromBusinessItemsToCarouselItems(items);
 
     if (index === 0) {
@@ -13,11 +12,11 @@ const getCarouselItemsFromIndex = (items: BusinessItem[], index: number): ImageC
     return [...itemsFromIndexToEnd, ...itemsFromStartToIndex];
 };
 
-const fromBusinessItemsToCarouselItems = (items?: BusinessItem[]): ImageCarouselItem[] => {
+const fromBusinessItemsToCarouselItems = (items?: BusinessItem[]): ImageDataItem[] => {
     if (!items) {
         return [];
     }
-    return items.map((item: BusinessItem): ImageCarouselItem => {
+    return items.map((item: BusinessItem): ImageDataItem => {
         return {
             title: item.title || '',
             description: item.description || '',

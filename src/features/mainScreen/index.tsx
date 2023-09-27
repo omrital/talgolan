@@ -1,20 +1,22 @@
-import {ImageCarouselItem, ImagesCarousel} from "../../components/ImagesCarousel";
 import {ImagesCarouselModal} from "../../components/ImagesCarouselModal";
+import {businessDataProvider} from "./services/businessDataProvider";
 import {CategoriesSmall} from "../../components/CategoriesSmall";
+import {ImagesCarousel} from "../../components/ImagesCarousel";
 import {ImagesGallery} from "../../components/ImagesGallery";
 import {dataConverter} from "./services/dataConverter";
 import {ContactUs} from "../../components/ContactUs";
+import {ImageDataItem} from "../../components/types";
 import {TitleBig} from "../../components/TitleBig";
 import {BusinessItem, CategoryType} from "./types";
+import {businessData} from "./data/businessData";
 import '../../components/BootstrapExamples.css';
 import {HeaderTG} from "./components/HeaderTG";
 import {FooterTG} from "./components/FooterTG";
-import {businessData} from "./businessData";
 import React, {useState} from 'react';
 
 function MainScreen() {
     const [show, setShow] = useState(false);
-    const [dialogImages, setDialogImages] = useState<ImageCarouselItem[]>([]);
+    const [dialogImages, setDialogImages] = useState<ImageDataItem[]>([]);
     const [mainCategory, setMainCategory] = useState<string>(CategoryType.CERAMIC);
     const [subCategory, setSubCategory] = useState<string>(CategoryType.CLASSIC);
 
@@ -25,7 +27,7 @@ function MainScreen() {
     const renderImagesCarousel = () => {
         const mainItems = businessData.mainCarouselItems;
 
-        const items = mainItems.map((item: BusinessItem, index: number): ImageCarouselItem => {
+        const items = mainItems.map((item: BusinessItem, index: number): ImageDataItem => {
             return {
                 title: item.title || '',
                 description: item.description || '',
@@ -43,24 +45,20 @@ function MainScreen() {
     }
 
     const renderTitleBig = () => {
-        const categories = businessData.categories;
-        const currentCategory = categories.find(category => category.id === mainCategory);
-
-        return <TitleBig
+        const currentCategory = businessDataProvider.getCategoryForId(mainCategory);
+        return (
+            <TitleBig
             title={currentCategory?.title ?? ""}
             backgroundImage={"big-title-background.png"}
-        ></TitleBig>
+            ></TitleBig>
+        );
     }
 
     function renderSubCategories() {
         if (!subCategory) {
             return <></>;
         }
-
-        const categories = businessData.categories;
-        const currentCategory = categories.find(category => category.id === mainCategory);
-        const subCategories = currentCategory?.subCategories;
-        const subCategoriesUiData = dataConverter.fromBusinessCategoriesToUiCategoriesItems(subCategories);
+        const subCategoriesUiData = businessDataProvider.getSubCategoriesForId(mainCategory);
 
         return (
             <CategoriesSmall
@@ -72,13 +70,11 @@ function MainScreen() {
     }
 
     const renderImagesGallery = () => {
-
-        const categories = businessData.categories;
-        const currentCategory = categories.find(category => category.id === mainCategory);
+        const currentCategory = businessDataProvider.getCategoryForId(mainCategory);
         const currentSubCategory = currentCategory?.subCategories?.find(category => category.id === subCategory);
         const mainItems = currentSubCategory ? currentSubCategory.items : currentCategory?.items;
 
-        const items2 = mainItems?.map((item: BusinessItem, index: number): ImageCarouselItem => {
+        const items2 = mainItems?.map((item: BusinessItem, index: number): ImageDataItem => {
             return {
                 title: item.title || '',
                 description: item.description || '',
@@ -118,10 +114,7 @@ function MainScreen() {
             <HeaderTG
                 selectedId={mainCategory}
                 setSelectedId={ (selectedId: string) => {
-                    const categories = businessData.categories;
-                    const currentCategory = categories.find(category => category.id === selectedId);
-                    const subCategories = currentCategory?.subCategories;
-
+                    const subCategories = businessDataProvider.getSubCategoriesForId(selectedId);
                     setMainCategory(selectedId);
                     setSubCategory(subCategories ? subCategories[0].id : '');
                 }}
