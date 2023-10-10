@@ -25,9 +25,9 @@ const fromBusinessItemsToCarouselItems = (items?: BusinessItem[]): ImageDataItem
     });
 }
 
-const fromBusinessCategoriesToUiCategoriesItems = (items?: BusinessCategory[]): Category[] => {
+const fromBusinessCategoriesToUiCategoriesItems = (items?: BusinessCategory[]): Category[] | undefined => {
     if (!items) {
-        return [];
+        return undefined;
     }
     return items.map((item: BusinessCategory): Category => {
         return {

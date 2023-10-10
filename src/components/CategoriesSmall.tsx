@@ -5,7 +5,7 @@ import React from "react";
 
 export type CategoriesSmallData = {
     onClick?: (id: string) => void;
-    categories: Category[];
+    categories?: Category[];
     selectedId?: string;
 }
 
@@ -27,7 +27,7 @@ export function CategoriesSmall(props: CategoriesSmallData) {
     const renderCategories = (data: CategoriesSmallData) => {
         const {categories, onClick, selectedId} = data;
 
-        return categories.map((category: Category) => {
+        return categories?.map((category: Category) => {
             return (
                 <Col className="Col2"
                      style={{backgroundColor: getCategoryBackground(category, selectedId)}}
